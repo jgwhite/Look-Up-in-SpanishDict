@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<script type="text/javascript" charset="utf-8">
+
+Element.prototype.findChildByClassName = function (selector) {
+	if (this.className.indexOf(selector) !== -1) {
+		return this;
+	} else {
+		for (var n = 0; n <= this.childNodes.length - 1; n++) {
+			try {
+				var child = this.childNodes[n];
+				if (child.findChildByClassName == undefined) continue;
+				var found = child.findChildByClassName(selector);
+				if (found) return found;
+			} catch (error) {}
+		}
+		return null;
+	}
+}
+
+var spanishdict = {};
+
+spanishdict.receiveCommand = function (event) {
+	switch (event.command) {
+	case "lookUpInSpanishDict":
+		spanishdict.lookUp();
+		break;
+	}
+}
+
+spanishdict.receiveMessage = function (event) {
+	switch (event.name) {
+	case "receiveSelection":
+		spanishdict.receiveSelection(event.message);
+		break;
+	}
+}
+
+spanishdict.lookUp = function () {
+	safari.application.activeBrowserWindow.activeTab.page.dispatchMessage(
+		"getSelection", ""
+	);
+}
+
+spanishdict.receiveSelection = function (selection) {
+	spanishdict.currentSelection = selection;
+	safari.application.activeBrowserWindow.activeTab.page.dispatchMessage(
+		"highlightSelection", ""
+	);
+	spanishdict.getDataFor(selection);
+}
+
+spanishdict.getDataFor = function (selection) {
+	spanishdict.request = new XMLHttpRequest();
+	spanishdict.request.open("GET", "http://spanishdict.com/translate/" + selection);
+	spanishdict.request.setRequestHeader("Accept", "application/xml");
+	spanishdict.request.setRequestHeader("Content-Type", "application/xml");
+	spanishdict.request.onreadystatechange = spanishdict.onreadystatechange;
+	spanishdict.request.send();
+}
+spanishdict.onreadystatechange = function (event) {
+	switch (spanishdict.request.readyState) {
+	case 0: // uninitialized
+		break;
+	case 1: // loading
+		break;
+	case 2: // loaded
+		break;
+	case 3: // interactive
+		break;
+	case 4: // complete
+		if (spanishdict.request.status == 200) spanishdict.onDataLoad();
+		else spanishdict.onDataFail();
+		break;
+	}
+}
+spanishdict.onDataLoad = function () {
+	var responseTextBody = spanishdict.request.responseText.match(/<body>([\s\S]+)<\/body>/)[1];
+	document.body.innerHTML = responseTextBody;
+	var definition = document.body.findChildByClassName("main-translation");
+	if (definition) {
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage(
+			"showDefinition",
+			definition.innerHTML.replace(/<p>[\s\n\r]*<\/p>/, "")
+		);
+	} else {
+		spanishdict.onDataFail();
+	}
+}
+spanishdict.onDataFail = function () {
+	safari.application.activeBrowserWindow.activeTab.page.dispatchMessage(
+		"showDefinition",
+		"Sorry, no definition found."
+	);
+}
+
+safari.application.addEventListener("command", spanishdict.receiveCommand, false);
+safari.application.addEventListener("message", spanishdict.receiveMessage, false);
+
+</script>
