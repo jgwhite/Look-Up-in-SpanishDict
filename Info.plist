@@ -11,9 +11,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Context Menu Items</key>
@@ -58,7 +58,9 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://jgwhite.co.uk/spanishdict/manifest.plist</string>
 	<key>Website</key>
-	<string>http://code.jgwhite.co.uk/spanishdict</string>
+	<string>http://jgwhite.co.uk/spanishdict/</string>
 </dict>
 </plist>

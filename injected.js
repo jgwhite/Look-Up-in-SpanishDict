@@ -46,17 +46,17 @@ spanishdict.highlightSelection = function () {
   range.insertNode(span);
   
   var definition = document.createElement("span");
-  definition.className = "jgwhite_spanishdict_insert_definition";
+  definition.className = "jgwhite_spanishdict_definition";
   
   var definitionHeading = document.createElement("span");
-  definitionHeading.className = "jgwhite_spanishdict_insert_definition_heading";
+  definitionHeading.className = "jgwhite_spanishdict_definition_heading";
   
   var definitionBody = document.createElement("span");
-  definitionBody.className = "jgwhite_spanishdict_insert_definition_body";
+  definitionBody.className = "jgwhite_spanishdict_definition_body";
   definitionBody.innerHTML = "Looking up definition&hellip;";
   
   var definitionLinkContainer = document.createElement("span");
-  definitionLinkContainer.className = "jgwhite_spanishdict_insert_definition_link_container";
+  definitionLinkContainer.className = "jgwhite_spanishdict_definition_link_container";
   
   var definitionLink = document.createElement("a");
   definitionLink.href = "http://spanishdict.com/translate/" + word.toLowerCase();
@@ -73,15 +73,19 @@ spanishdict.highlightSelection = function () {
   var definitionParent = span;
   
   while (true) {
+    var overflow = window.getComputedStyle(definitionParent).overflow;
+    
     if (
       definitionParent === document.body ||
-      (definitionParent.scrollHeight > definitionParent.offsetHeight) ||
-      (definitionParent.scrollWidth > definitionParent.offsetWidth)
+      (overflow !== "hidden" && overflow !== "visible" && (
+        (definitionParent.scrollHeight > definitionParent.offsetHeight) ||
+        (definitionParent.scrollWidth > definitionParent.offsetWidth)
+      ))
     ) {
       break;
     } else {
-      position.top += (definitionParent.offsetTop || 0) - (parseInt(definitionParent.borderLeftWidth) || 0);
-      position.left += definitionParent.offsetLeft || 0;
+      position.top += (definitionParent.offsetTop || 0);
+      position.left += (definitionParent.offsetLeft || 0) + (parseInt(window.getComputedStyle(definitionParent).borderLeftWidth) || 0);
       definitionParent = definitionParent.offsetParent;
     }
   }
