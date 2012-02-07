@@ -36,45 +36,45 @@ spanishdict.getSelection = function () {
 }
 spanishdict.highlightSelection = function () {
   spanishdict.close();
-  
+
   var range = window.getSelection().getRangeAt(0);
   var word = range.extractContents().textContent;
   var span = document.createElement("span");
   span.className = "jgwhite_spanishdict_insert";
   span.innerHTML = word;
-  
+
   range.insertNode(span);
-  
+
   var definition = document.createElement("span");
   definition.className = "jgwhite_spanishdict_definition";
-  
+
   var definitionHeading = document.createElement("span");
   definitionHeading.className = "jgwhite_spanishdict_definition_heading";
-  
+
   var definitionBody = document.createElement("span");
   definitionBody.className = "jgwhite_spanishdict_definition_body";
   definitionBody.innerHTML = "Looking up definition&hellip;";
-  
+
   var definitionLinkContainer = document.createElement("span");
   definitionLinkContainer.className = "jgwhite_spanishdict_definition_link_container";
-  
+
   var definitionLink = document.createElement("a");
   definitionLink.href = "http://spanishdict.com/translate/" + word.toLowerCase();
   definitionLink.target = "_blank";
   definitionLink.innerHTML = "Open in SpanishDict &raquo;";
-  
+
   definitionLinkContainer.appendChild(definitionLink);
-  
+
   definition.appendChild(definitionHeading);
   definition.appendChild(definitionBody);
   definition.appendChild(definitionLinkContainer);
-  
+
   var position = { top: 0, left: 0 };
   var definitionParent = span;
-  
+
   while (true) {
     var overflow = window.getComputedStyle(definitionParent).overflow;
-    
+
     if (
       definitionParent === document.body ||
       (overflow !== "hidden" && overflow !== "visible" && (
@@ -89,22 +89,22 @@ spanishdict.highlightSelection = function () {
       definitionParent = definitionParent.offsetParent;
     }
   }
-  
+
   definitionParent.appendChild(definition);
-  
+
   if (position.left + definition.offsetWidth < definitionParent.offsetWidth + definitionParent.scrollLeft) {
     definition.style.left = position.left + "px";
   } else {
     definition.style.left = (position.left + span.offsetWidth - definition.offsetWidth) + "px";
     definition.className = definition.className + " jgwhite_spanishdict_toleft";
   }
-  
+
   if (definitionParent === document.body) {
     var verticalLimit = window.innerHeight + document.body.scrollTop;
   } else {
     var verticalLimit = definitionParent.offsetHeight + definitionParent.scrollTop;
   }
-  
+
   if (position.top + definition.offsetHeight < verticalLimit) {
     definition.style.top = (position.top + span.offsetHeight) + "px";
   } else {
@@ -112,18 +112,18 @@ spanishdict.highlightSelection = function () {
     span.className = span.className + " jgwhite_spanishdict_ontop";
     definition.className = definition.className + " jgwhite_spanishdict_ontop";
   }
-  
+
   spanishdict.current = {
     span: span,
     definition: definition,
     word: word
   };
-  
+
   document.addEventListener("click", spanishdict.closeClick, true);
 }
 spanishdict.close = function () {
   if (!spanishdict.current) return;
-  
+
   spanishdict.current.span.parentNode.replaceChild(
     document.createTextNode(spanishdict.current.word),
     spanishdict.current.span
@@ -131,17 +131,17 @@ spanishdict.close = function () {
   spanishdict.current.definition.parentNode.removeChild(
     spanishdict.current.definition
   );
-  
+
   spanishdict.current = null;
 }
 spanishdict.closeClick = function (event) {
   var target = event.target;
-  
+
   while (target) {
     if (target === spanishdict.current.definition || target === spanishdict.current.span) return;
     else target = target.parentNode;
   }
-  
+
   spanishdict.close();
   document.removeEventListener("click", spanishdict.closeClick, true);
 }

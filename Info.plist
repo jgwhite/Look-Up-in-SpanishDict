@@ -4,6 +4,8 @@
 <dict>
 	<key>Author</key>
 	<string>Jamie White</string>
+	<key>Builder Version</key>
+	<string>7534.53.10</string>
 	<key>CFBundleDisplayName</key>
 	<string>Look Up in SpanishDict</string>
 	<key>CFBundleIdentifier</key>
@@ -11,9 +13,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>1.0.2</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Context Menu Items</key>

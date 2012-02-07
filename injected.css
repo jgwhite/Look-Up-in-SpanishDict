@@ -1,160 +1,164 @@
 .jgwhite_spanishdict_insert {
-	display: inline-block !important;
-	position: relative !important;
-	background-color: #2667A4 !important;
-	padding: 1px 4px 3px !important;
-	margin: -1px -4px -3px !important;
-	color: #ffffff !important;
-	border-top-left-radius: 8px !important;
-	border-top-right-radius: 8px !important;
-	-webkit-box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.4) !important;
-	z-index: 2010 !important;
+  display: inline-block !important;
+  position: relative !important;
+  background-color: #2667A4 !important;
+  padding: 1px 4px 3px !important;
+  margin: -1px -4px -3px !important;
+  color: #ffffff !important;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  -webkit-box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.4) !important;
+  z-index: 2010 !important;
 }
 .jgwhite_spanishdict_insert.jgwhite_spanishdict_ontop {
-	border-bottom-left-radius: 8px !important;
-	border-bottom-right-radius: 8px !important;
-	border-top-left-radius: 0px !important;
-	border-top-right-radius: 0px !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
 }
 
 .jgwhite_spanishdict_definition {
-	display: block !important;
-	position: absolute !important;
-	width: 240px !important;
-	height: 116px !important;
-	background: #417AAE !important;
-	border-top-right-radius: 10px !important;
-	border-bottom-right-radius: 10px !important;
-	border-bottom-left-radius: 10px !important;
-	-webkit-box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.4) !important;
-	color: #303030 !important;
-	font-family: Lucida Grande !important;
-	font-size: 11px !important;
-	font-weight: normal !important;
-	font-style: normal !important;
-	line-height: 1.2 !important;
-	overflow: hidden !important;
-	text-transform: none !important;
-	letter-spacing: 0 !important;
-	z-index: 2020 !important;
-	zoom: 1 !important;
+  display: block !important;
+  position: absolute !important;
+  width: 240px !important;
+  height: 116px !important;
+  background: #417AAE !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  -webkit-box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.4) !important;
+  color: #303030 !important;
+  font-family: Lucida Grande !important;
+  font-size: 11px !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  line-height: 1.2 !important;
+  overflow: hidden !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  z-index: 2020 !important;
+  zoom: 1 !important;
 }
 .jgwhite_spanishdict_definition * {
-	font-family: Lucida Grande !important;
-	font-size: 11px !important;
-	color: #272727 !important;
-	line-height: 1.2 !important;
+  font-family: Lucida Grande !important;
+  font-size: 11px !important;
+  color: #272727 !important;
+  line-height: 1.2 !important;
 }
 .jgwhite_spanishdict_definition.jgwhite_spanishdict_ontop {
-	border-top-left-radius: 10px !important;
-	border-top-right-radius: 10px !important;
-	border-bottom-left-radius: 0px !important;
-	border-bottom-right-radius: 10px !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 10px !important;
 }
 .jgwhite_spanishdict_definition.jgwhite_spanishdict_toleft {
-	border-top-left-radius: 10px !important;
-	border-top-right-radius: 0px !important;
-	border-bottom-left-radius: 10px !important;
-	border-bottom-right-radius: 10px !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
 }
 .jgwhite_spanishdict_definition.jgwhite_spanishdict_ontop.jgwhite_spanishdict_toleft {
-	border-top-left-radius: 10px !important;
-	border-top-right-radius: 10px !important;
-	border-bottom-left-radius: 10px !important;
-	border-bottom-right-radius: 0px !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 0px !important;
 }
-	.jgwhite_spanishdict_definition_heading {
-		display: block !important; position: relative !important;
-		margin: 0 !important; padding: 0 !important;
-		height: 20px !important;
-		color: #fff !important;
-		z-index: 3 !important;
-		border-top-right-radius: 10px !important;
+  .jgwhite_spanishdict_definition_heading {
+    display: block !important; position: relative !important;
+    margin: 0 !important; padding: 0 !important;
+    height: 20px !important;
+    color: #fff !important;
+    z-index: 3 !important;
+    border-top-right-radius: 10px !important;
     background: #417AAE !important;
-		background-image: url(spanishdict-logo.png) !important;
-		background-repeat: no-repeat !important;
-		background-position: 154px 4px !important;
-	}
-	.jgwhite_spanishdict_definition.jgwhite_spanishdict_ontop .jgwhite_spanishdict_definition_heading {
-		border-top-left-radius: 10px !important;
-	}
-	.jgwhite_spanishdict_definition.jgwhite_spanishdict_toleft .jgwhite_spanishdict_definition_heading {
-	  border-top-left-radius: 10px !important;
-	  border-top-right-radius: 0px !important;
-	}
-	.jgwhite_spanishdict_definition.jgwhite_spanishdict_ontop.jgwhite_spanishdict_toleft .jgwhite_spanishdict_definition_heading {
-		border-top-left-radius: 10px !important;
-		border-top-right-radius: 10px !important;
-	}
-	.jgwhite_spanishdict_definition_body {
-		margin: 0px !important;
-		display: block !important; position: relative !important;
-		background: #eee !important;
-		padding: 5px 7px !important;
-		overflow-x: hidden !important;
-		overflow-y: auto !important;
-		height: 66px !important;
-		font-weight: normal !important;
-		font-style: normal !important;
-		color: #303030 !important;
-		line-height: 1.4 !important;
-		text-align: left !important;
-	}
-		.jgwhite_spanishdict_definition_body .part_of_speech {
-			font-weight: bold !important;
-			color: #53A40A !important;
-		}
-		.jgwhite_spanishdict_definition_body ul {
-			padding-left: 24px !important;
-			margin-top: 6px !important; margin-bottom: 6px !important;
-		}
-		.jgwhite_spanishdict_definition_body .def_header {
-			font-weight: bold !important;
-		}
-		.jgwhite_spanishdict_definition_body .def {
-			font-weight: bold !important;
-		}
-		.jgwhite_spanishdict_definition_body .head_word,
-		.jgwhite_spanishdict_definition_body .box,
-		.jgwhite_spanishdict_definition_body .pron {
-			display: none !important;
-		}
-		.jgwhite_spanishdict_definition_body .d-copyright {
-			display: none !important;
-		}
-		.jgwhite_spanishdict_definition_body .LV3 {
-			margin: 0.6em 0 !important;
-		}
-		.jgwhite_spanishdict_definition_body ul.examples {
-		  display: block; position: relative;
-		  padding: 0 0 0 1.2em !important;
-		  margin: 0 0 0 10px !important;
-		  list-style-image: none !important;
-		  list-style: disc outside !important;
-		  line-height: 1.2 !important;
-		}
-  		.jgwhite_spanishdict_definition_body ul.examples li {
-		    margin: 0.6em 0 !important;
-  	  }
-	.jgwhite_spanishdict_definition_link_container {
-		display: block !important; position: relative !important;
-		margin: 0 !important; padding: 0 !important;
-		height: 20px !important;
-		color: #fff !important;
-		z-index: 3 !important;
-		/*background: -webkit-gradient(linear, left top, left bottom, from(#4D93D4), to(#417AAE)) !important;*/
-		background: transparent !important;
-		border-bottom-right-radius: 10px !important;
-		border-bottom-left-radius: 10px !important;
-		line-height: 20px !important;
-	}
-		.jgwhite_spanishdict_definition_link_container a {
-			display: block !important; position: relative !important;
-			padding: 5px 10px !important;
-			color: #fff !important;
-			text-decoration: none !important;
-			font-size: 10px !important; line-height: 1 !important;
-			text-align: right !important;
-			cursor: hand !important; cursor: pointer !important;
-		}
-		
+    background-image: url(spanishdict-logo.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: 154px 4px !important;
+  }
+  .jgwhite_spanishdict_definition.jgwhite_spanishdict_ontop .jgwhite_spanishdict_definition_heading {
+    border-top-left-radius: 10px !important;
+  }
+  .jgwhite_spanishdict_definition.jgwhite_spanishdict_toleft .jgwhite_spanishdict_definition_heading {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 0px !important;
+  }
+  .jgwhite_spanishdict_definition.jgwhite_spanishdict_ontop.jgwhite_spanishdict_toleft .jgwhite_spanishdict_definition_heading {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+  }
+  .jgwhite_spanishdict_definition_body {
+    margin: 0px !important;
+    display: block !important; position: relative !important;
+    background: #eee !important;
+    padding: 5px 7px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: 66px !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    color: #303030 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+  }
+    .jgwhite_spanishdict_definition_body .part_of_speech {
+      font-weight: bold !important;
+      color: #53A40A !important;
+    }
+    .jgwhite_spanishdict_definition_body ul {
+      padding-left: 24px !important;
+      margin-top: 6px !important; margin-bottom: 6px !important;
+    }
+    .jgwhite_spanishdict_definition_body .def_header {
+      font-weight: bold !important;
+    }
+    .jgwhite_spanishdict_definition_body .def {
+      font-weight: bold !important;
+    }
+    .jgwhite_spanishdict_definition_body .head_word,
+    .jgwhite_spanishdict_definition_body .box,
+    .jgwhite_spanishdict_definition_body .pron,
+    .jgwhite_spanishdict_definition_body .tools-block,
+    .jgwhite_spanishdict_definition_body .tip,
+    .jgwhite_spanishdict_definition_body #show-video {
+      display: none !important;
+    }
+    .jgwhite_spanishdict_definition_body .d-copyright {
+      display: none !important;
+    }
+    .jgwhite_spanishdict_definition_body .LV3 {
+      margin: 0.6em 0 !important;
+    }
+    .jgwhite_spanishdict_definition_body ul.examples {
+      display: block; position: relative;
+      padding: 0 0 0 1.2em !important;
+      margin: 0 0 0 10px !important;
+      list-style-image: none !important;
+      list-style: disc outside !important;
+      line-height: 1.2 !important;
+    }
+      .jgwhite_spanishdict_definition_body ul.examples li {
+        margin: 0.6em 0 !important;
+      }
+  .jgwhite_spanishdict_definition_link_container {
+    display: block !important; position: relative !important;
+    margin: 0 !important; padding: 0 !important;
+    height: 20px !important;
+    color: #fff !important;
+    z-index: 3 !important;
+    background: transparent !important;
+    border-bottom-right-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+    line-height: 20px !important;
+  }
+    .jgwhite_spanishdict_definition_link_container a {
+      display: block !important; position: relative !important;
+      padding: 5px 10px !important;
+      color: #fff !important;
+      text-decoration: none !important;
+      font-size: 10px !important; line-height: 1 !important;
+      text-align: right !important;
+      cursor: hand !important; cursor: pointer !important;
+    }
+    .jgwhite_spanishdict_definition_link_container a:hover {
+    }
+
