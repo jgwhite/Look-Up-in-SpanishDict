@@ -49,7 +49,7 @@ spanishdict.onDataLoad = function () {
   var responseTextBody = this.responseText.match(/<body.*?>([\s\S]+)<\/body>/)[1];
   var tmp = document.createElement("div");
   tmp.innerHTML = responseTextBody;
-  var definition = tmp.querySelector('.card');
+  var definition = tmp.querySelector('.dictionary-entry');
 
   if (definition) {
     definition = definition.innerHTML;
