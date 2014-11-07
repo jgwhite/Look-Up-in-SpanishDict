@@ -32,12 +32,15 @@ spanishdict.sendSelection = function () {
   );
 }
 spanishdict.getSelection = function () {
-  return window.getSelection().getRangeAt(0).cloneContents().textContent;
+  var selection = window.getSelection();
+  spanishdict.__selection__ = selection;
+  return selection.getRangeAt(0).cloneContents().textContent;
 }
 spanishdict.highlightSelection = function () {
   spanishdict.close();
 
-  var range = window.getSelection().getRangeAt(0);
+  var selection = spanishdict.__selection__;
+  var range = selection.getRangeAt(0);
   var word = range.extractContents().textContent;
   var span = document.createElement("span");
   span.className = "jgwhite_spanishdict_insert";
